@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+ {% block content %}
+
+
+ {% for quiz in quizzes %}
+ <div class="card" style="z-index: 999;">
+   <div class="card-header">
+     <h4>{{ quiz.owner }}</h4>
+   </div>
+   <div class="card-body">
+     {{ quiz.name }}
+   </div>
+   <div class="card-footer">
+     {{ quiz.create_date|date:"F j, Y H:i" }}
+   </div>
+ </div>
+{% endfor %}
+
+  {% endblock %}
